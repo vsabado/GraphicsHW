@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vlad/Git Repositories/GraphicsHW/HW1_Fireworks/Homework1.cpp
+GL/glut.h
+-
+math.h
+-
+stdlib.h
+-
+stdio.h
+-
+iostream
+-
+

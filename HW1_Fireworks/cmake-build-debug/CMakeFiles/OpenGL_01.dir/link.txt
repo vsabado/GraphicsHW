@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/OpenGL_01.dir/Homework1.cpp.o  -o OpenGL_01 /usr/lib/i386-linux-gnu/libGLU.so /usr/lib/i386-linux-gnu/libGL.so /usr/lib/i386-linux-gnu/libglut.so /usr/lib/i386-linux-gnu/libXmu.so /usr/lib/i386-linux-gnu/libXi.so 

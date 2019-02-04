@@ -51,6 +51,7 @@ cout << "setProperties called!" << endl;
 }
 
 void explode() {
+    cout << "explode called!" << endl;
     glPointSize(1.5);
     double glow = (duration - timer) / (double) duration;
     glColor3f(red * glow, green * glow, blue * glow);
