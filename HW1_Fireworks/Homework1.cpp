@@ -8,10 +8,10 @@
 using namespace std;
 
 int blastIntensity;
-const int maxPoints = 300; //Max possible number of points
+const int maxPoints = 400; //Max possible number of points
 float x[maxPoints], y[maxPoints], z[maxPoints], accelX[maxPoints], accelY[maxPoints]; //Arrays with size of max possible points to track motion of each point
 int timer, duration; //Used to calculate when we'll initialize for the next blast, Indicates how quickly the blast happens and the pointers disperse
-float twoPi = 2.0 * M_PI;
+double twoPi = 2.0 * M_PI;
 
 void idle() {
     glutPostRedisplay();
@@ -22,19 +22,20 @@ double randDouble() {
 }
 
 
-void setProperties(float startX, float startY) {
+void setProperties(float startX, float startY, float startZ) {
     cout << "setProperties called!" << endl;
-    double circumference;
     blastIntensity = randDouble() * maxPoints; //Generate number of points that will show
     timer = 0; //reset timer
-    duration = 300 * randDouble(); //Duration
+    duration = 500 * randDouble(); //Duration
 
     for (int i = 0; i < blastIntensity; i++) {
         x[i] = startX; //Sets all starting position X
         y[i] = startY; //Sets all starting position Y
-        circumference = randDouble() * twoPi; //2piR is the radius of a circle
-        accelX[i] =
-                (cos(circumference) * randDouble()) / duration; //Spreads out the firework over the course of duration
+        z[i] = startZ; //Sets all starting position for Z
+        double circumference = randDouble() * twoPi; //2piR is the radius of a circle
+
+        //Spreads out the firework over the course of duration
+        accelX[i] = (cos(circumference) * randDouble()) / duration;
         accelY[i] = (sin(circumference) * randDouble()) / duration;
     }
 }
@@ -71,7 +72,8 @@ void display() {
     if (timer > duration) {
         float startX = randDouble(); //Current x
         float startY = randDouble(); //Current y
-        setProperties(startX, startY);
+        float startZ = randDouble(); //Current z
+        setProperties(startX, startY, startZ);
     }
 }
 
