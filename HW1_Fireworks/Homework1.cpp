@@ -4,57 +4,46 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+
 using namespace std;
 
 int blastIntensity;
-const int maxPoints = 4000; //Max possible number of points
-float startX, startY; //Starting x,y
-float x[maxPoints], y[maxPoints]; //Create arrays with size of max possible points
-float accelX[maxPoints], accelY[maxPoints]; //Arrays with size of max possible points to track motion of each point
-float red, green, blue; //RGB variables
-int timer; //Used to calculate when we'll initialize for the next blast
-int duration; //Indicates how quickly the blast happens and the pointers disperse
-float twoPi = 2.0 * M_PI;
+const int maxPoints = 400; //Max possible number of points
+float x[maxPoints], y[maxPoints], z[maxPoints], accelX[maxPoints], accelY[maxPoints]; //Arrays with size of max possible points to track motion of each point
+int timer, duration; //Used to calculate when we'll initialize for the next blast, Indicates how quickly the blast happens and the pointers disperse
+double twoPi = 2.0 * M_PI;
 
 void idle() {
     glutPostRedisplay();
 }
 
-double randDouble(){
+double randDouble() {
     return (rand() % 100) / 100.0;
 }
 
 
-void setProperties() {
-cout << "setProperties called!" << endl;
-    double temp, temp2;
-    blastIntensity = randDouble() * maxPoints; //Number of points
-    startX = randDouble(); //Current x
-    startY = randDouble(); //Current y
-    red = 0.5 + 0.5 * randDouble(); //RGB
-    green = 0.5 + 0.5 * randDouble(); //RGB
-    blue = 0.5 + 0.5 * randDouble(); //RGB
-    timer = 0;
-    duration = 200 * randDouble(); //Duration
+void setProperties(float startX, float startY, float startZ) {
+    cout << "setProperties called!" << endl;
+    blastIntensity = randDouble() * maxPoints; //Generate number of points that will show
+    timer = 0; //reset timer
+    duration = 500 * randDouble(); //Duration
 
+    for (int i = 0; i < blastIntensity; i++) {
+        x[i] = startX; //Sets all starting position X
+        y[i] = startY; //Sets all starting position Y
+        z[i] = startZ; //Sets all starting position for Z
+        double circumference = randDouble() * twoPi; //2piR is the radius of a circle
 
-/* initialize the blast */
-    for (int j = 0; j < blastIntensity; j++) {
-        x[j] = startX;
-        y[j] = startY;
-        temp = randDouble();
-        temp2 = randDouble() * twoPi; //2piR is the radius of a circle
-        accelX[j] = (cos(temp2) * temp) / duration;
-        accelY[j] = (sin(temp2) * temp) / duration;
+        //Spreads out the firework over the course of duration
+        accelX[i] = (cos(circumference) * randDouble()) / duration;
+        accelY[i] = (sin(circumference) * randDouble()) / duration;
     }
-
 }
 
-void explode() {
-    cout << "explode called!" << endl;
+void explode(float red, float green, float blue, double light) {
+    cout << "Explode called!" << endl;
     glPointSize(1.5);
-    double glow = (duration - timer) / (double) duration;
-    glColor3f(red * glow, green * glow, blue * glow);
+    glColor3f(red * light, green * light, blue * light);
     glBegin(GL_POINTS);
     for (int i = 0; i < blastIntensity; i++) {
         x[i] += accelX[i];
@@ -63,25 +52,34 @@ void explode() {
     }
     glEnd();
     glFlush();
-    glutSwapBuffers();
+    glClear(GL_COLOR_BUFFER_BIT);
 }
 
 
 //Allowing the display function to determine the RGB properties causes a situation
 //in which the color changes multiple times throughout the explosion
 //Allowing the function to dictate x,y also results in the fireworks moving around quickly and seemingly random
-//Hence it cannot be in this function
+//Unless it is delayed via a timer
 void display() {
- cout << "Display called!" << endl;
-    glClear(GL_COLOR_BUFFER_BIT);
-    explode();
+    cout << "Display called!" << endl;
+    float red, green, blue; //RGB variables
+    red = 0.5 + 0.5 + randDouble(); //Tried many combinations but this is the easiest on the eyes
+    green = 0.5 + 0.5 + randDouble(); //RGB
+    blue = 0.5 + 0.5 + randDouble(); //RGB
+    double light = (duration - timer) / (double) duration;
+    explode(red, green, blue, light);
     timer++;
-    if (timer > duration) setProperties();
+    if (timer > duration) {
+        float startX = randDouble(); //Current x
+        float startY = randDouble(); //Current y
+        float startZ = randDouble(); //Current z
+        setProperties(startX, startY, startZ);
+    }
 }
 
 int main(int argc, char **argv) {
     glutInit(&argc, argv);
-    glutInitWindowSize(800, 800);
+    glutInitWindowSize(500, 500);
     glutInitWindowPosition(0, 0);
     glutCreateWindow("Homework 1: Fireworks");
     glClearColor(0.0, 0.0, 0.0, 0.0);
