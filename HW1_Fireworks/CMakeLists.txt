@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.5)
+#cmake_minimum_required(VERSION 3.13)
+
 
 set(PROJECT_NAME
         "OpenGL_01"

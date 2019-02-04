@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+=======
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +10,11 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /home/vladpc/GraphicsHW/HW1_Fireworks/Homework1.cpp
+=======
+/home/vlad/Git Repositories/GraphicsHW/HW1_Fireworks/Homework1.cpp
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
 GL/glut.h
 -
 math.h

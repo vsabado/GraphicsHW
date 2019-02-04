@@ -33,8 +33,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="48ddb14a-b247-4169-bffe-f1d6f1a14ce5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Homework1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Homework1.cpp" afterDir="false" />
+=======
+    <list default="true" id="1c16513d-fdca-4caf-92e6-663028648471" name="Default Changelist" comment="Merge branch 'master' of https://github.com/vsabado/GraphicsHW&#10;&#10;# Conflicts:&#10;#&#9;HW1_Fireworks/Homework1.cpp">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Homework1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OpenGL_01" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OpenGL_01" afterDir="false" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,6 +56,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Homework1.cpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,15 +65,30 @@
               <folding>
                 <element signature="e#92#112#0" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Homework1.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
             </state>
           </provider>
         </entry>
@@ -75,28 +101,67 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Fireworks.cpp" />
+=======
+        <option value="$PROJECT_DIR$/main.cpp" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Homework1.cpp" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="67" />
     <option name="y" value="25" />
     <option name="width" value="927" />
     <option name="height" value="950" />
   </component>
+=======
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="893" />
+    <option name="height" value="890" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
+<<<<<<< HEAD
     <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/CLionProjects/TestingProject" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+=======
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HW1_Fireworks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW1_Fireworks" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,6 +187,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="48ddb14a-b247-4169-bffe-f1d6f1a14ce5" name="Default Changelist" comment="" />
       <created>1549245256655</created>
       <option name="number" value="Default" />
@@ -174,6 +240,56 @@
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32862645" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32886723" />
+=======
+      <changelist id="1c16513d-fdca-4caf-92e6-663028648471" name="Default Changelist" comment="" />
+      <created>1548949065189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548949065189</updated>
+      <workItem from="1548949066679" duration="1205000" />
+      <workItem from="1549082645517" duration="2571000" />
+      <workItem from="1549154916377" duration="181000" />
+      <workItem from="1549167340453" duration="8569000" />
+      <workItem from="1549177195575" duration="7129000" />
+      <workItem from="1549184533983" duration="3081000" />
+      <workItem from="1549302839914" duration="465000" />
+      <workItem from="1549310235358" duration="563000" />
+    </task>
+    <task id="LOCAL-00001" summary="Working homework 1&#10;The code must be restructured!">
+      <created>1549184630705</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549184630705</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="23764000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="24" width="1855" height="904" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2238806" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.11552795" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="TeamCity" order="8" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3279503" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="CMake" order="13" weight="0.32829046" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -185,6 +301,7 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="Setup new Linux environment on desktop. Changed some codes&#10;&#10;to-do:&#10;Make the explosion into lines&#10;figure out how to implement a z dimension&#10;Spawn multiple fireworks" />
     <MESSAGE value="added the z dimension, but it's not really being used.&#10;&#10;to-do&#10;Spawn multiples&#10;Points to lines" />
     <MESSAGE value="Finished" />
@@ -206,6 +323,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+=======
+    <MESSAGE value="Working homework 1&#10;The code must be restructured!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working homework 1&#10;The code must be restructured!" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Homework1.h" />
+    <entry file="file://$PROJECT_DIR$/main.cpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homework1.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
         </state>
       </provider>
     </entry>

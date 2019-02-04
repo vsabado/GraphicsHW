@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /home/vladpc/GraphicsHW/HW1_Fireworks/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/vladpc/GraphicsHW/HW1_Fireworks/cmake-build-debug/CMakeFiles/OpenGL_01.dir
 /home/vladpc/GraphicsHW/HW1_Fireworks/cmake-build-debug/CMakeFiles/edit_cache.dir
+=======
+/home/vlad/Git Repositories/GraphicsHW/HW1_Fireworks/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vlad/Git Repositories/GraphicsHW/HW1_Fireworks/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vlad/Git Repositories/GraphicsHW/HW1_Fireworks/cmake-build-debug/CMakeFiles/OpenGL_01.dir
+>>>>>>> e87de891e0cd7cb3b81ca6ef29d1c1f2df4eb53a
