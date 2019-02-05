@@ -1,4 +1,3 @@
-//Used http://www.ntu.edu.sg/home/ehchua/programming/opengl/HowTo_OpenGL_C.html as a learning guide
 #include <GL/glut.h>
 #include <math.h>
 #include <stdlib.h>
