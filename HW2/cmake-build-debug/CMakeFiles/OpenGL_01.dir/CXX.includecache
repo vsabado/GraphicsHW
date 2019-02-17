@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vladpc/Git Repositories/GraphicsHW/HW2/Cube.h
+GL/glut.h
+-
+
+/home/vladpc/Git Repositories/GraphicsHW/HW2/main.cpp
+math.h
+-
+stdio.h
+-
+stdlib.h
+-
+GL/glut.h
+-
+iostream
+-
+vector
+-
+Cube.h
+/home/vladpc/Git Repositories/GraphicsHW/HW2/Cube.h
+
