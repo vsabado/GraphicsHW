@@ -159,7 +159,7 @@ int main(int argc, char *argv[]) {
     printf("   Press R/r - go into rotate mode\n");
     printf("   Fly mode: Press x/X for left/right, y/Y for up/down, z/Z for forward/background \n");
     printf("   Rotate mode: Press x/X, y/Y, z/Z \n");
-    printf("   Press v to place box and 'V' to remove box \n");
+    printf("   Press + to place box and - to remove box \n");
 
     glutMainLoop();
     return 0;
