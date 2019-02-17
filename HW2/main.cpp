@@ -68,7 +68,7 @@ void drawPlayer() {
 
 
 void spawnCube() {
-    Cube temp(playerX, playerY, playerZ, mode, 0.15);
+    Cube temp(playerX, playerY, playerZ, GL_POLYGON, 0.15);
     cubes.push_back(temp);
 }
 
@@ -130,9 +130,9 @@ void keyboard(unsigned char key, int x, int y) {
             playerZ += movementSpeed;
         else if (key == 'z')
             playerZ -= movementSpeed;
-        else if (key == 'v')
+        else if (key == '+')
             spawnCube();
-        else if (key == 'V' && cubes.size() != 1)
+        else if (key == '-' && cubes.size() != 1)
             cubes.pop_back();
     }
 
