@@ -68,7 +68,7 @@ void drawPlayer() {
 
 
 void spawnCube() {
-    Cube temp(playerX, playerY, playerZ, mode, 0.1);
+    Cube temp(playerX, playerY, playerZ, mode, 0.15);
     cubes.push_back(temp);
 }
 

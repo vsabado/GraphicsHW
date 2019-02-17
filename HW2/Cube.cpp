@@ -48,7 +48,7 @@ void Cube::draw(){
 
     // Draw 6 faces
     glBegin(mode);
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(1.0, 1.0, 1.0);
     glVertex3f(ax, ay, az);
     glVertex3f(bx, by, bz);
     glVertex3f(cx, cy, cz);
@@ -56,7 +56,7 @@ void Cube::draw(){
     glEnd();
 
     glBegin(mode);
-    glColor3f(0.0, 1.0, 0.0);
+    glColor3f(1.0, 1.0, 1.0);
     glVertex3f(ax, ay, az);
     glVertex3f(dx, dy, dz);
     glVertex3f(hx, hy, hz);
@@ -64,7 +64,7 @@ void Cube::draw(){
     glEnd();
 
     glBegin(mode);
-    glColor3f(0.0, 1.0, 0.0);
+    glColor3f(1.0, 1.0, 1.0);
     glVertex3f(ax, ay, az);
     glVertex3f(ex, ey, ez);
     glVertex3f(fx, fy, fz);
@@ -72,7 +72,7 @@ void Cube::draw(){
     glEnd();
 
     glBegin(mode);
-    glColor3f(0.0, 1.0, 0.0);
+    glColor3f(1.0, 1.0, 1.0);
     glVertex3f(gx, gy, gz);
     glVertex3f(fx, fy, fz);
     glVertex3f(ex, ey, ez);
@@ -80,7 +80,7 @@ void Cube::draw(){
     glEnd();
 
     glBegin(mode);
-    glColor3f(0.0, 1.0, 0.0);
+    glColor3f(1.0, 1.0, 1.0);
     glVertex3f(gx, gy, gz);
     glVertex3f(cx, cy, cz);
     glVertex3f(bx, by, bz);
@@ -88,7 +88,7 @@ void Cube::draw(){
     glEnd();
 
     glBegin(mode);
-    glColor3f(0.0, 1.0, 0.0);
+    glColor3f(1.0, 1.0, 1.0);
     glVertex3f(gx, gy, gz);
     glVertex3f(hx, hy, hz);
     glVertex3f(dx, dy, dz);
