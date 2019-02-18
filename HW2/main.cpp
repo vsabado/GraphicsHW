@@ -175,17 +175,17 @@ void keyboard(unsigned char key, int x, int y) {
     //Spawn and remove boxes
     if (key == '+')
         spawnCube();
-    else if (key == '-' && cubes.size() != 1) {
+    else if (key == '-' && cubes.size() != 1) { //Big cube is index 0
         for (int i = 1; i < cubes.size(); i++) {
             if (cubes[i].isEqual(playerX, playerY, playerZ)) {
-                cout << "Found one!" << endl;
+                cout << "Found one at index: " << i << endl;
 
-                //Approach one: remove the index at its current position
-//                cubes.erase(cubes.begin() + i);
+//                Approach one: remove the index at its current position
+                cubes.erase(cubes.begin() + i);
 
-                //Approach two: moves the index to the end and call pop_back()
-                cubes[i] = cubes.back();
-                cubes.pop_back();
+//                //Approach two: moves the index to the end and call pop_back()
+//                cubes[i] = cubes.back();
+//                cubes.pop_back();
             }
         }
     }
@@ -211,7 +211,7 @@ void keyboard(unsigned char key, int x, int y) {
 //---------------------------------------
 int main(int argc, char *argv[]) {
     glutInit(&argc, argv);
-    glutInitWindowSize(1100, 1100);
+    glutInitWindowSize(800, 800);
     glutInitWindowPosition(250, 250);
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
     glutCreateWindow("Homework 2: BlockWorld");

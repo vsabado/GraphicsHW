@@ -3,7 +3,9 @@
 //
 
 #include "Cube.h"
-#include <GL/glut.h>
+//#include <stdio.h>
+//#include <cmath>
+
 
 Cube::Cube(float x, float y, float z, GLenum mode, float size) {
     this->midx = x;
@@ -93,5 +95,6 @@ void Cube::draw() {
 
 bool Cube::isEqual(float x, float y, float z) {
     float delta = 0.0000001; //Since the difference is 2.98023e-08, this delta value must be greater
-    return abs(this->midx - x) < delta && abs(this->midy - y) < delta && abs(this->midz - z) < delta;
+//    printf("Mid value (%f,%f,%f), Values (%f,%f,%f) \n", midx,midy,midz, x,y,z);
+    return fabs( double(this->midx - x)) < delta && fabs( double(this->midy - y) ) < delta && fabs( double(this->midz - z)) < delta;
 }

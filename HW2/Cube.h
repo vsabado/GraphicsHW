@@ -3,6 +3,7 @@
 //
 
 #include <GL/glut.h>
+#include <math.h>
 #ifndef PROJECT_CUBE_H
 #define PROJECT_CUBE_H
 

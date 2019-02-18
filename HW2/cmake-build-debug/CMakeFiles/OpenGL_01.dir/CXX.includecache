@@ -6,13 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/vladpc/Git Repositories/GraphicsHW/HW2/Cube.cpp
+/home/vlad/Git Repositories/GraphicsHW/HW2/Cube.cpp
 Cube.h
-/home/vladpc/Git Repositories/GraphicsHW/HW2/Cube.h
+/home/vlad/Git Repositories/GraphicsHW/HW2/Cube.h
+
+/home/vlad/Git Repositories/GraphicsHW/HW2/Cube.h
 GL/glut.h
+-
+math.h
 -
 
-/home/vladpc/Git Repositories/GraphicsHW/HW2/Cube.h
+/home/vlad/Git Repositories/GraphicsHW/HW2/main.cpp
 GL/glut.h
 -
+iostream
+-
+vector
+-
+Cube.h
+/home/vlad/Git Repositories/GraphicsHW/HW2/Cube.h
 

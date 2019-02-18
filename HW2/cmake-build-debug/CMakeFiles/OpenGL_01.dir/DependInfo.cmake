@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vladpc/Git Repositories/GraphicsHW/HW2/Cube.cpp" "/home/vladpc/Git Repositories/GraphicsHW/HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/Cube.cpp.o"
-  "/home/vladpc/Git Repositories/GraphicsHW/HW2/main.cpp" "/home/vladpc/Git Repositories/GraphicsHW/HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/main.cpp.o"
+  "/home/vlad/Git Repositories/GraphicsHW/HW2/Cube.cpp" "/home/vlad/Git Repositories/GraphicsHW/HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/Cube.cpp.o"
+  "/home/vlad/Git Repositories/GraphicsHW/HW2/main.cpp" "/home/vlad/Git Repositories/GraphicsHW/HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
