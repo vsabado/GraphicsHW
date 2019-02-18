@@ -34,19 +34,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3130750a-e3eb-400e-8bce-5ad55178f4c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../HW1_Fireworks/Homework1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../HW1_Fireworks/Homework1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HW2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HW2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HW2/Cube.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../HW2/Cube.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HW2/Cube.h" beforeDir="false" afterPath="$PROJECT_DIR$/../HW2/Cube.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/Cube.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/Cube.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../HW2/cmake-build-debug/CMakeFiles/OpenGL_01.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HW2/cmake-build-debug/OpenGL_01" beforeDir="false" afterPath="$PROJECT_DIR$/../HW2/cmake-build-debug/OpenGL_01" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HW2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../HW2/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TestFiles.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TestFiles.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,7 +83,7 @@
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="67" />
     <option name="y" value="27" />
-    <option name="width" value="907" />
+    <option name="width" value="897" />
     <option name="height" value="948" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -146,14 +134,15 @@
       <workItem from="1550361141680" duration="2687000" />
       <workItem from="1550393465159" duration="282000" />
       <workItem from="1550444330862" duration="588000" />
+      <workItem from="1550449677099" duration="7000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3557000" />
+    <option name="totallyTimeSpent" value="3564000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="27" width="907" height="948" extended-state="5" />
+    <frame x="67" y="27" width="897" height="948" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.1861521" />
