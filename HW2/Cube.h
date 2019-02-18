@@ -17,4 +17,5 @@ public:
     GLenum mode;
     Cube(float x, float y, float z, GLenum mode, float size);
     void draw();
+    bool isEqual(float x, float y, float z);
 };

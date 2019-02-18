@@ -10,7 +10,7 @@ using namespace std;
 
 //GLenum mode = GL_LINE_LOOP;
 
-Cube::Cube(float x, float y, float z, GLenum mode, float size){
+Cube::Cube(float x, float y, float z, GLenum mode, float size) {
     this->midx = x;
     this->midy = y;
     this->midz = z;
@@ -18,7 +18,7 @@ Cube::Cube(float x, float y, float z, GLenum mode, float size){
     this->size = size;
 }
 
-void Cube::draw(){
+void Cube::draw() {
     // Define 8 vertices
     float ax = midx - size / 2;
     float ay = midy - size / 2;
@@ -94,4 +94,8 @@ void Cube::draw(){
     glVertex3f(dx, dy, dz);
     glVertex3f(cx, cy, cz);
     glEnd();
+}
+
+bool Cube::isEqual(float x, float y, float z) {
+    return this->midx == x && this->midy == y && this->midz == z;
 }

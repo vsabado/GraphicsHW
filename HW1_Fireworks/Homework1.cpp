@@ -72,7 +72,7 @@ void initF2() {
 }
 
 void explode(float red, float green, float blue, double light) {
-    glPointSize(1.5);
+    glPointSize(1.5);CMake Error: Parse error in cache file
     glBegin(GL_POINTS);
     glColor3f(red * light, green * light, blue * light);
     for (int i = 0; i < blastIntensity; i++) {

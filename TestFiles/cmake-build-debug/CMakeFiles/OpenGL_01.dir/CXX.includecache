@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vladpc/Git Repositories/GraphicsHW/TestFiles/main.cpp
+math.h
+-
+stdio.h
+-
+stdlib.h
+-
+GLUT/glut.h
+-
+GL/glut.h
+-
+

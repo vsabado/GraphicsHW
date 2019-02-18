@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/FireworksHW1.dir/main.cpp.o  -o FireworksHW1 
