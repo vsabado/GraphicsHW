@@ -4,6 +4,7 @@
 
 #include "Cube.h"
 #include <GL/glut.h>
+#include <cstdlib>
 
 
 using namespace std;
@@ -48,7 +49,7 @@ void Cube::draw() {
 
     // Draw 6 faces
     glBegin(mode);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor3f(1.0, 0.0, 0.0);
     glVertex3f(ax, ay, az);
     glVertex3f(bx, by, bz);
     glVertex3f(cx, cy, cz);
@@ -56,7 +57,7 @@ void Cube::draw() {
     glEnd();
 
     glBegin(mode);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor3f(0.0, 1.0, 0.0);
     glVertex3f(ax, ay, az);
     glVertex3f(dx, dy, dz);
     glVertex3f(hx, hy, hz);
@@ -64,7 +65,7 @@ void Cube::draw() {
     glEnd();
 
     glBegin(mode);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor3f(0.0, 1.0, 1.0);
     glVertex3f(ax, ay, az);
     glVertex3f(ex, ey, ez);
     glVertex3f(fx, fy, fz);
@@ -72,7 +73,7 @@ void Cube::draw() {
     glEnd();
 
     glBegin(mode);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor3f(0.0, 1.0, 1.0);
     glVertex3f(gx, gy, gz);
     glVertex3f(fx, fy, fz);
     glVertex3f(ex, ey, ez);
@@ -80,7 +81,7 @@ void Cube::draw() {
     glEnd();
 
     glBegin(mode);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor3f(1.0, 0.0, 1.0);
     glVertex3f(gx, gy, gz);
     glVertex3f(cx, cy, cz);
     glVertex3f(bx, by, bz);
@@ -88,7 +89,7 @@ void Cube::draw() {
     glEnd();
 
     glBegin(mode);
-    glColor3f(1.0f, 1.0f, 1.0f);
+    glColor3f(1.0, 1.0, 0.0);
     glVertex3f(gx, gy, gz);
     glVertex3f(hx, hy, hz);
     glVertex3f(dx, dy, dz);
@@ -96,6 +97,11 @@ void Cube::draw() {
     glEnd();
 }
 
+//bool Cube::isEqual(float x, float y, float z) {
+//    return this->midx == x && this->midy == y && this->midz == z;
+//}
+
 bool Cube::isEqual(float x, float y, float z) {
-    return this->midx == x && this->midy == y && this->midz == z;
+    float delta = 0.0000001; //Since the difference is 2.98023e-08, this delta value must be greater
+    return abs(this->midx - x) < delta && abs(this->midy - y) < delta && abs(this->midz - z) < delta;
 }

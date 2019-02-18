@@ -2,9 +2,6 @@
 // Created by vladpc on 2/17/19.
 //
 
-//#include <math.h>
-//#include <stdio.h>
-//#include <stdlib.h>
 #include <GL/glut.h>
 #include <iostream>
 #include <vector>
@@ -109,6 +106,15 @@ void fullRestart() {
 }
 
 //---------------------------------------
+// Shows one dimensional view for debugging
+//---------------------------------------
+void oneDimensionView(){
+    zangle = 0;
+    xangle = 0;
+    yangle = 0;
+}
+
+//---------------------------------------
 // Keyboard callback for OpenGL
 //---------------------------------------
 void keyboard(unsigned char key, int x, int y) {
@@ -173,6 +179,11 @@ void keyboard(unsigned char key, int x, int y) {
         for (int i = 1; i < cubes.size(); i++) {
             if (cubes[i].isEqual(playerX, playerY, playerZ)) {
                 cout << "Found one!" << endl;
+
+                //Approach one: remove the index at its current position
+//                cubes.erase(cubes.begin() + i);
+
+                //Approach two: moves the index to the end and call pop_back()
                 cubes[i] = cubes.back();
                 cubes.pop_back();
             }
@@ -184,10 +195,12 @@ void keyboard(unsigned char key, int x, int y) {
         restart();
     else if (key == 'D')
         fullRestart();
+    else if (key == '`')
+        oneDimensionView();
 
-//    cout << "PlayerX: " << playerX << endl;
-//    cout << "PlayerY: " << playerY << endl;
-//    cout << "PlayerZ: " << playerZ << endl;
+    cout << "PlayerX: " << playerX << endl;
+    cout << "PlayerY: " << playerY << endl;
+    cout << "PlayerZ: " << playerZ << endl;
 
     // Redraw objects
     glutPostRedisplay();
@@ -201,7 +214,7 @@ int main(int argc, char *argv[]) {
     glutInitWindowSize(1100, 1100);
     glutInitWindowPosition(250, 250);
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
-    glutCreateWindow("Homework 2: Cube");
+    glutCreateWindow("Homework 2: BlockWorld");
     glutDisplayFunc(display);
     glutKeyboardFunc(keyboard);
     init();
@@ -214,6 +227,7 @@ int main(int argc, char *argv[]) {
     printf("   Rotate mode: Press x/X, y/Y, z/Z \n");
     printf("   Press + to place box and - to remove box \n");
     printf("   Press d to restart position and maintain cubes, D to restart position and remove cubes \n");
+    printf("   Press ` for one dimensional view \n");
 //    printf("   Press q/Q to go toggle movement speed 0.03/0.2 \n");
     glutMainLoop();
     return 0;
