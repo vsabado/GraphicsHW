@@ -4,12 +4,6 @@
 
 #include "Cube.h"
 #include <GL/glut.h>
-#include <cstdlib>
-
-
-using namespace std;
-
-//GLenum mode = GL_LINE_LOOP;
 
 Cube::Cube(float x, float y, float z, GLenum mode, float size) {
     this->midx = x;
@@ -96,10 +90,6 @@ void Cube::draw() {
     glVertex3f(cx, cy, cz);
     glEnd();
 }
-
-//bool Cube::isEqual(float x, float y, float z) {
-//    return this->midx == x && this->midy == y && this->midz == z;
-//}
 
 bool Cube::isEqual(float x, float y, float z) {
     float delta = 0.0000001; //Since the difference is 2.98023e-08, this delta value must be greater

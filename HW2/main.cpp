@@ -198,9 +198,9 @@ void keyboard(unsigned char key, int x, int y) {
     else if (key == '`')
         oneDimensionView();
 
-    cout << "PlayerX: " << playerX << endl;
-    cout << "PlayerY: " << playerY << endl;
-    cout << "PlayerZ: " << playerZ << endl;
+//    cout << "PlayerX: " << playerX << endl;
+//    cout << "PlayerY: " << playerY << endl;
+//    cout << "PlayerZ: " << playerZ << endl;
 
     // Redraw objects
     glutPostRedisplay();
