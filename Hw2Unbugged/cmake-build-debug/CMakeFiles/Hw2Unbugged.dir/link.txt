@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Hw2Unbugged.dir/main.cpp.o  -o Hw2Unbugged 

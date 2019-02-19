@@ -23,7 +23,7 @@ float positiveFixed = 0.6;
 float negativeFixed = -0.6;
 bool fly = true;
 float movementSpeed = 0.2;
-vector<Cube> cubes;
+vector<Cube> cubes; //Stores cubes inside vector
 
 //---------------------------------------
 // Init function for OpenGL
