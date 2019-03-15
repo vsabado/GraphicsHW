@@ -8,6 +8,9 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+
+using namespace std;
 
 #ifdef MAC
 #include <GLUT/glut.h>
@@ -22,7 +25,7 @@
 #define Light1 2
 #define Light2 3
 #define Material 4
-int xangle = 40;
+int xangle = -80;
 int yangle = 0;
 int zangle = 0;
 int mode = ROTATE;
@@ -41,9 +44,8 @@ float Lx1 = 1.0, Ly1 = 1.0, Lz1 = 1.0;
 float Lx2 = 1.0, Ly2 = 1.0, Lz2 = 1.0;
 float r1 = 1.0, g1 = 1.0, b1 = 1.0;
 float r2 = 1.0, g2 = 1.0, b2 = 1.0;
+float constant = 1, linear = 0.95, quadratic = 0.85;
 
-
-#include "shading.cpp"
 
 //---------------------------------------
 // Initialize surface points
@@ -69,6 +71,36 @@ void init_surface(float Xmin, float Xmax, float Ymin, float Ymax) {
                     Pz[i][j] += 0.01 * sin(angle * 2 * M_PI);
                 }
     }
+}
+
+void CreateLight() {
+    glPointSize(10.0);
+    glBegin(GL_POINTS);
+    glColor3f(r1, g1, b1);
+    glVertex3f(Lx1, Ly1, Lz1);
+    glEnd();
+}
+
+
+float getEuclidean(float x, float y, float z) {
+    return sqrt((x * x) + (y * y) + (z * z));
+}
+
+float getDotProduct(float x1, float y1, float z1, float x2, float y2, float z2) {
+    return ((x1 * x2) + (y1 * y2) + (z1 * z2));
+}
+
+float calculateCos(float x1, float y1, float z1, float x2, float y2, float z2) {
+    float euclidean1 = getEuclidean(x1, y1, z1);
+    float euclidean2 = getEuclidean(x2, y2, z2);
+
+    float normalizedx1 = x1 / euclidean1, normalizedy1 = y1 / euclidean1, normalizedz1 = z1 / euclidean1;
+    float normalizedx2 = x2 / euclidean2, normalizedy2 = y2 / euclidean2, normalizedz2 = z2 / euclidean2;
+
+    float dotProduct = getDotProduct(normalizedx1, normalizedy1, normalizedz1, normalizedx2, normalizedy2, normalizedz2);
+    float cos = acos(dotProduct) * (180 / M_PI);
+
+    return cos;
 }
 
 //---------------------------------------
@@ -111,9 +143,11 @@ void init() {
 
 
     // Initialize surface
-    init_surface(-1.0, 1.0, -1.0, 1.0);
+    //init_surface(-1.0, 1.0, -1.0, 1.0);
+    init_surface(-0.5, 0.5, -0.5, 0.5);
     init_normals();
 }
+
 
 //---------------------------------------
 // Display callback for OpenGL
@@ -127,20 +161,17 @@ void display() {
     glRotatef(yangle, 0.0, 1.0, 0.0);
     glRotatef(zangle, 0.0, 0.0, 1.0);
 
-    // Initialize material properties
-    init_material(Ka, Kd, Ks, 100 * Kp, 0.3, 0.3, 0.8);
-
-    // Initialize smooth shading
-    glShadeModel(GL_SMOOTH);
-    init_light(GL_LIGHT1, Lx1, Ly1, Lz1, r1, g1, b1);
-    init_light(GL_LIGHT2, Lx2, Ly2, Lz2, r2, g2, b2);
-
     // Draw the surface
     int i, j;
     for (i = 0; i < SIZE; i++)
         for (j = 0; j < SIZE; j++) {
+            float eu = getEuclidean(Lx1, Ly1, Lz1);
+            float cos = calculateCos(Lx1, Ly1, Lz1, Nx[i][j], Ny[i][j], Nz[i][j]) / (constant + (linear * eu) + (quadratic * (eu * eu)));
+            float red = 1.0 * cos, g = 1.0 * cos, b = 1.0 * cos;
+
             // glBegin(GL_LINE_LOOP);
             glBegin(GL_POLYGON);
+            glColor3f(0 + red, 0 + g, 0 + b);
             glNormal3f(Nx[i][j], Ny[i][j], Nz[i][j]);
             glVertex3f(Px[i][j], Py[i][j], Pz[i][j]);
             glNormal3f(Nx[i + 1][j], Ny[i + 1][j], Nz[i + 1][j]);
@@ -151,18 +182,17 @@ void display() {
             glVertex3f(Px[i][j + 1], Py[i][j + 1], Pz[i][j + 1]);
             glEnd();
         }
+
+    CreateLight();
+
     glFlush();
 }
+
 
 //---------------------------------------
 // Keyboard callback for OpenGL
 //---------------------------------------
 void keyboard(unsigned char key, int x, int y) {
-    // Initialize random surface
-    if (key == 'i') {
-        init_surface(-1.0, 1.0, -1.0, 1.0);
-        init_normals();
-    }
 
     // Determine if we are in ROTATE or TRANSLATE mode
     if ((key == 'm') || (key == 'M')) {
@@ -198,17 +228,17 @@ void keyboard(unsigned char key, int x, int y) {
     //Handle Light1 translations
     if (mode == Light1) {
         if (key == 'x')
-            Lx1 -= 5;
+            Lx1 -= 1;
         else if (key == 'y')
-            Ly1 -= 5;
+            Ly1 -= 1;
         else if (key == 'z')
-            Lz1 -= 5;
+            Lz1 -= 1;
         else if (key == 'X')
-            Lx1 += 5;
+            Lx1 += 1;
         else if (key == 'Y')
-            Ly1 += 5;
+            Ly1 += 1;
         else if (key == 'Z')
-            Lz1 += 5;
+            Lz1 += 1;
         if (key == 'r')
             r1 -= 1;
         else if (key == 'g')
@@ -234,17 +264,17 @@ void keyboard(unsigned char key, int x, int y) {
     //Handle Light1 translations
     if (mode == Light2) {
         if (key == 'x')
-            Lx2 -= 5;
+            Lx2 -= 1;
         else if (key == 'y')
-            Ly2 -= 5;
+            Ly2 -= 1;
         else if (key == 'z')
-            Lz2 -= 5;
+            Lz2 -= 1;
         else if (key == 'X')
-            Lx2 += 5;
+            Lx2 += 1;
         else if (key == 'Y')
-            Ly2 += 5;
+            Ly2 += 1;
         else if (key == 'Z')
-            Lz2 += 5;
+            Lz2 += 1;
         if (key == 'r')
             r2 -= 1;
         else if (key == 'g')
@@ -267,36 +297,12 @@ void keyboard(unsigned char key, int x, int y) {
         }
     }
 
-
-    if (mode == Material) {
-        // Handle material properties
-        if (key == 'a')
-            Ka -= STEP;
-        if (key == 'd')
-            Kd -= STEP;
-        if (key == 's')
-            Ks -= STEP;
-        if (key == 'p')
-            Kp -= STEP;
-        if (key == 'A')
-            Ka += STEP;
-        if (key == 'D')
-            Kd += STEP;
-        if (key == 'S')
-            Ks += STEP;
-        if (key == 'P')
-            Kp += STEP;
-        if (Ka < 0)
-            Ka = 0;
-        if (Kd < 0)
-            Kd = 0;
-        if (Ks < 0)
-            Ks = 0;
-        if (Kp < STEP)
-            Kp = STEP;
-    }
-
     glutPostRedisplay();
+}
+
+void testfuncion() {
+    float cos = calculateCos(-6, 8, 0, 5, 12, 0);
+    cout << "cos is " << cos << endl;
 }
 
 //---------------------------------------
@@ -306,11 +312,14 @@ int main(int argc, char *argv[]) {
     // Create OpenGL window
     glutInit(&argc, argv);
     glutInitWindowSize(800, 800);
-    glutInitWindowPosition(400, 400);
+    glutInitWindowPosition(250, 250);
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE | GLUT_DEPTH);
     glutCreateWindow("Surface");
     init();
-    printf("Type r to enter ROTATE mode.\n");
+    printf("Type m to enter ROTATE mode.\n");
+
+    testfuncion();
+
 
     // Specify callback function
     glutDisplayFunc(display);
