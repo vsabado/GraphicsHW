@@ -41,10 +41,11 @@ float Nz[SIZE + 1][SIZE + 1];
 #define STEP 0.1
 
 float Lx1 = 1.0, Ly1 = 1.0, Lz1 = 1.0;
-float Lx2 = 1.0, Ly2 = 1.0, Lz2 = 1.0;
+float Lx2 = 0.0, Ly2 = 1.0, Lz2 = 1.0;
 float r1 = 1.0, g1 = 1.0, b1 = 1.0;
 float r2 = 1.0, g2 = 1.0, b2 = 1.0;
 float constant = 1, linear = 0.95, quadratic = 0.85;
+bool isLight1 = false;
 
 
 //---------------------------------------
@@ -78,6 +79,12 @@ void CreateLight() {
     glBegin(GL_POINTS);
     glColor3f(r1, g1, b1);
     glVertex3f(Lx1, Ly1, Lz1);
+    glEnd();
+
+    glPointSize(10.0);
+    glBegin(GL_POINTS);
+    glColor3f(r2, g2, b2);
+    glVertex3f(Lx2, Ly2, Lz2);
     glEnd();
 }
 
@@ -137,7 +144,7 @@ void init() {
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    float radius = 1.2;
+    float radius = 2;
     glOrtho(-radius, radius, -radius, radius, -radius, radius);
     glEnable(GL_DEPTH_TEST);
 
@@ -149,25 +156,14 @@ void init() {
 }
 
 
-//---------------------------------------
-// Display callback for OpenGL
-//---------------------------------------
-void display() {
-    // Incrementally rotate objects
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    glRotatef(xangle, 1.0, 0.0, 0.0);
-    glRotatef(yangle, 0.0, 1.0, 0.0);
-    glRotatef(zangle, 0.0, 0.0, 1.0);
-
+void drawSurfaceLight1(){
     // Draw the surface
     int i, j;
     for (i = 0; i < SIZE; i++)
         for (j = 0; j < SIZE; j++) {
             float eu = getEuclidean(Lx1, Ly1, Lz1);
             float cos = calculateCos(Lx1, Ly1, Lz1, Nx[i][j], Ny[i][j], Nz[i][j]) / (constant + (linear * eu) + (quadratic * (eu * eu)));
-            float red = 1.0 * cos, g = 1.0 * cos, b = 1.0 * cos;
+            float red = r1 * cos, g = g1 * cos, b = b1 * cos;
 
             // glBegin(GL_LINE_LOOP);
             glBegin(GL_POLYGON);
@@ -182,8 +178,52 @@ void display() {
             glVertex3f(Px[i][j + 1], Py[i][j + 1], Pz[i][j + 1]);
             glEnd();
         }
+}
 
+
+void drawSurfaceLight2(){
+    // Draw the surface
+    int i, j;
+    for (i = 0; i < SIZE; i++)
+        for (j = 0; j < SIZE; j++) {
+            float eu = getEuclidean(Lx2, Ly2, Lz2);
+            float cos = calculateCos(Lx2, Ly2, Lz2, Nx[i][j], Ny[i][j], Nz[i][j]) / (constant + (linear * eu) + (quadratic * (eu * eu)));
+            float red = r2 * cos, g = g2 * cos, b = b2 * cos;
+
+            // glBegin(GL_LINE_LOOP);
+            glBegin(GL_POLYGON);
+            glColor3f(0 + red, 0 + g, 0 + b);
+            glNormal3f(Nx[i][j], Ny[i][j], Nz[i][j]);
+            glVertex3f(Px[i][j], Py[i][j], Pz[i][j]);
+            glNormal3f(Nx[i + 1][j], Ny[i + 1][j], Nz[i + 1][j]);
+            glVertex3f(Px[i + 1][j], Py[i + 1][j], Pz[i + 1][j]);
+            glNormal3f(Nx[i + 1][j + 1], Ny[i + 1][j + 1], Nz[i + 1][j + 1]);
+            glVertex3f(Px[i + 1][j + 1], Py[i + 1][j + 1], Pz[i + 1][j + 1]);
+            glNormal3f(Nx[i][j + 1], Ny[i][j + 1], Nz[i][j + 1]);
+            glVertex3f(Px[i][j + 1], Py[i][j + 1], Pz[i][j + 1]);
+            glEnd();
+        }
+}
+
+
+
+//---------------------------------------
+// Display callback for OpenGL
+//---------------------------------------
+void display() {
+    // Incrementally rotate objects
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glRotatef(xangle, 1.0, 0.0, 0.0);
+    glRotatef(yangle, 0.0, 1.0, 0.0);
+    glRotatef(zangle, 0.0, 0.0, 1.0);
     CreateLight();
+
+    if(isLight1)
+        drawSurfaceLight1();
+    else
+        drawSurfaceLight2();
 
     glFlush();
 }
@@ -194,19 +234,18 @@ void display() {
 //---------------------------------------
 void keyboard(unsigned char key, int x, int y) {
 
-    // Determine if we are in ROTATE or TRANSLATE mode
+    // Determine if we are in ROTATE or light mode
     if ((key == 'm') || (key == 'M')) {
         printf("Type x y z to decrease or X Y Z to increase ROTATION angles.\n");
         mode = ROTATE;
     } else if (key == '1') {
-        printf("Type x y z to decrease or X Y Z to increase light position for light 1 or p to reset position.\n");
+        printf("Light 1: Type x y z to decrease or X Y Z to increase light position or p to reset position.\n");
         mode = Light1;
+        isLight1 = true;
     } else if (key == '2') {
-        printf("Type x y z to decrease or X Y Z to increase light position for light 2 or p to reset position.\n");
+        printf("Light 2: Type x y z to decrease or X Y Z to increase light position or p to reset position.\n");
         mode = Light2;
-    } else if (key == '3') {
-        printf("Type a, A, s, S, d, D, P to manipulate material properties.\n");
-        mode = Material;
+        isLight1 = false;
     }
 
     // Handle ROTATE
@@ -288,7 +327,7 @@ void keyboard(unsigned char key, int x, int y) {
         else if (key == 'B')
             b2 += 1;
         else if (key == 'p') {
-            Lx2 = 1;
+            Lx2 = 0;
             Lz2 = 1;
             Ly2 = 1;
             r2 = 1;
@@ -316,10 +355,9 @@ int main(int argc, char *argv[]) {
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE | GLUT_DEPTH);
     glutCreateWindow("Surface");
     init();
-    printf("Type m to enter ROTATE mode.\n");
+    printf("Type m to enter ROTATE mode, 1 to control light 1, 2 to control light 2 \n");
 
-    testfuncion();
-
+    //testfuncion();
 
     // Specify callback function
     glutDisplayFunc(display);
