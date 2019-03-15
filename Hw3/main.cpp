@@ -1,10 +1,4 @@
-//---------------------------------------
-// Program: surface4.cpp
-// Purpose: Use Phong shading to display
-//          random wave surface model.
-// Author:  John Gauch
-// Date:    Spring 2012
-//---------------------------------------
+//Vladimir Sabado, Homework 3
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,6 +68,9 @@ void init_surface(float Xmin, float Xmax, float Ymin, float Ymax) {
     }
 }
 
+//---------------------------------------
+// Initialize Lights
+//---------------------------------------
 void CreateLight() {
     glPointSize(10.0);
     glBegin(GL_POINTS);
@@ -88,6 +85,9 @@ void CreateLight() {
     glEnd();
 }
 
+//---------------------------------------
+// Math functions to obtain angle and euclidean value
+//---------------------------------------
 
 float getEuclidean(float x, float y, float z) {
     return sqrt((x * x) + (y * y) + (z * z));
@@ -155,7 +155,9 @@ void init() {
     init_normals();
 }
 
-
+//---------------------------------------
+// Initialize draw the light surfaces
+//---------------------------------------
 void drawSurfaceLight1(){
     // Draw the surface
     int i, j;
@@ -339,6 +341,9 @@ void keyboard(unsigned char key, int x, int y) {
     glutPostRedisplay();
 }
 
+//---------------------------------------
+// Testing math functions
+//---------------------------------------
 void testfuncion() {
     float cos = calculateCos(-6, 8, 0, 5, 12, 0);
     cout << "cos is " << cos << endl;
