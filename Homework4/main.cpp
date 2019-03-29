@@ -102,7 +102,9 @@ void performRotation() {
     result.printValues();
 }
 
-
+//function that takes xyz
+//returns an outcode, 4 bits based on the xyz
+//so i need to see if they're min, max
 
 
 
