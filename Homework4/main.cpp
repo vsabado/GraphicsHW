@@ -2,8 +2,11 @@
 #include <cstdlib>
 #include <ctime>
 #include "Coords.h"
+#include <math.h>
 
 using namespace std;
+
+const double PI = 3.14;
 
 //---------------------------------------
 // Generate random values for x, y, z
@@ -23,7 +26,9 @@ Coords translateValues(Coords coords, Coords translateBy) {
 }
 
 void performTranslation() {
-    cout << "=======================================    PERFORMING TRANSFORMATION FUNCTION   =========================================================" << endl;
+    cout
+            << "=======================================    PERFORMING TRANSFORMATION FUNCTION   ========================================================="
+            << endl;
     Coords coords = generateRandomValues();
     Coords translateBy = generateRandomValues();
     cout << "Coordinate values to translate: " << endl;
@@ -56,10 +61,63 @@ void performScale() {
     result.printValues();
 }
 
+//---------------------------------------
+// Rotate x, y, z values
+//---------------------------------------
+Coords rotateXAroundX(Coords coords, double theta) {
+    coords.y = (cos(theta) * coords.y) - (sin(theta) * coords.z);
+    coords.z = (sin(theta) * coords.y) + (cos(theta) * coords.z);
+    return coords;
+}
+
+Coords rotateZAroundZ(Coords coords, double theta) {
+    coords.x = (cos(theta) * coords.x) - (sin(theta) * coords.y);
+    coords.y = (sin(theta) * coords.x) + (cos(theta) * coords.y);
+    return coords;
+}
+
+
+Coords rotateYAroundY(Coords coords, double theta) {
+    coords.x = (cos(theta) * coords.x) + (sin(theta) * coords.z);
+    coords.z = (-sin(theta) * coords.x) + (cos(theta) * coords.z);
+    return coords;
+}
+
+void performRotation() {
+    cout << "=======================================    PERFORMING ROTATION FUNCTION   =========================================================" << endl;
+    Coords coords = generateRandomValues();
+    Coords result(0,0,0);
+    double theta = (rand() % 90) * (PI/180);
+    cout << "Coordinate values to rotate: " << endl;
+    coords.printValues();
+    cout << "Theta to rotate by " << theta << endl;
+    cout << "Rotate around X-axis values: " << endl;
+    result = rotateXAroundX(coords, theta);
+    result.printValues();
+    cout << "Rotate around Y-axis values: " << endl;
+    result = rotateYAroundY(coords, theta);
+    result.printValues();
+    cout << "Rotate around Z-axis values: " << endl;
+    result = rotateZAroundZ(coords, theta);
+    result.printValues();
+}
+
+
+
+
+
+
+
+
+
+void performAllTranslations() {
+    performTranslation();
+    performScale();
+    performRotation();
+}
 
 int main() {
     //Translate operations
-    performTranslation();
-    performScale();
+    performAllTranslations();
     return 0;
 }
