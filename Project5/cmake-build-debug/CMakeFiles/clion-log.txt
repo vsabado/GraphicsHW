@@ -1,0 +1,4 @@
+/home/vladpc/Downloads/CLion-2018.3.4/clion-2018.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/vladpc/Git Repositories/GraphicsHW/Project5"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/vladpc/Git Repositories/GraphicsHW/Project5/cmake-build-debug

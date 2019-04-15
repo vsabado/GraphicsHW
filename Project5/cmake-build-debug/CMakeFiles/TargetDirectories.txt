@@ -1,0 +1,3 @@
+/home/vladpc/Git Repositories/GraphicsHW/Project5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vladpc/Git Repositories/GraphicsHW/Project5/cmake-build-debug/CMakeFiles/Project.dir
+/home/vladpc/Git Repositories/GraphicsHW/Project5/cmake-build-debug/CMakeFiles/edit_cache.dir
