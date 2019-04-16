@@ -6,3 +6,51 @@
 
 #IncludeRegexTransform: 
 
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_color.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+im_short.h
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_short.h
+im_float.h
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_float.h
+
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_float.h
+im_pixel.h
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_pixel.h
+
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_pixel.h
+stdio.h
+-
+stdlib.h
+-
+ctype.h
+-
+math.h
+-
+time.h
+-
+string
+-
+
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_short.h
+im_pixel.h
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_pixel.h
+
+/home/vladpc/Git Repositories/GraphicsHW/Project5/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+GL/glut.h
+-
+libim/im_color.h
+/home/vladpc/Git Repositories/GraphicsHW/Project5/libim/im_color.h
+

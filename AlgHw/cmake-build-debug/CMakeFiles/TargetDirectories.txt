@@ -1,0 +1,3 @@
+/home/vladpc/Git Repositories/GraphicsHW/AlgHw/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vladpc/Git Repositories/GraphicsHW/AlgHw/cmake-build-debug/CMakeFiles/AlgHw.dir
+/home/vladpc/Git Repositories/GraphicsHW/AlgHw/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -8,7 +8,7 @@ LIB2 = libim/libim.a jpeg/libjpeg.a
 
 # define makefile targets
 CC = g++ -Wall -Wno-deprecated-declarations -O3
-BIN = main
+BIN = main test
 all: $(BIN)
 
 
@@ -23,3 +23,7 @@ libim/libim.a:
 
 main: main.cpp 
 	$(CC) -o main main.cpp $(LIB) $(LIB2)
+
+test: test.cpp 
+	$(CC) -o test test.cpp $(LIB) $(LIB2)
+

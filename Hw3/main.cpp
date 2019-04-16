@@ -144,7 +144,7 @@ void init() {
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    float radius = 2;
+    float radius = 1.4;
     glOrtho(-radius, radius, -radius, radius, -radius, radius);
     glEnable(GL_DEPTH_TEST);
 

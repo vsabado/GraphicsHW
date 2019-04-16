@@ -1,0 +1,3 @@
+/home/vladpc/Git Repositories/GraphicsHW/Hw3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vladpc/Git Repositories/GraphicsHW/Hw3/cmake-build-debug/CMakeFiles/OpenGL_01.dir
+/home/vladpc/Git Repositories/GraphicsHW/Hw3/cmake-build-debug/CMakeFiles/edit_cache.dir
