@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vladpc/Git Repositories/GraphicsHW/testApp/main.cpp
+math.h
+-
+ctime
+-
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+fstream
+-
+sstream
+-
+GLUT/glut.h
+-
+GL/glut.h
+-
+raytracing.h
+/home/vladpc/Git Repositories/GraphicsHW/testApp/raytracing.h
+phong.h
+/home/vladpc/Git Repositories/GraphicsHW/testApp/phong.h
+
+/home/vladpc/Git Repositories/GraphicsHW/testApp/phong.h
+iostream
+-
+cmath
+-
+
+/home/vladpc/Git Repositories/GraphicsHW/testApp/raytracing.h
+iostream
+-
+cmath
+-
+

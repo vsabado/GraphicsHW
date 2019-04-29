@@ -17,6 +17,8 @@ int xangle = -35, yangle = 0, zangle = 0, xpos = -10, ypos = -10, zpos = 10;
 #define PLAYER 3
 int mode = PLAYER;
 
+float cRadius = 10.0f;
+
 //---------------------------------------
 // Keyboard callback for OpenGL
 //---------------------------------------
@@ -223,7 +225,7 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    glTranslatef(xpos, ypos, zpos);
+    glTranslatef(xpos, ypos, -cRadius);
     glRotatef(xangle, 1.0, 0.0, 0.0);
     glRotatef(yangle, 0.0, 1.0, 0.0);
     glRotatef(zangle, 0.0, 0.0, 1.0);
